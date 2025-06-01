@@ -1,0 +1,343 @@
+/* Base Styles */
+:root {
+  --primary: #2c3e50;       /* Dark blue */
+  --primary-light: #3498db; /* Medium blue */
+  --accent: #2980b9;        /* Darker blue */
+  --light: #ecf0f1;         /* Light gray */
+  --white: #ffffff;
+  --danger: #e74c3c;        /* Red for actions */
+  --success: #27ae60;       /* Green */
+  --text: #333333;
+  --border: #dfe6e9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f5f7fa;
+  color: var(--text);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  border-bottom: 2px solid var(--primary-light);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  color: var(--accent);
+}
+
+/* Buttons */
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#logoutBtn {
+  background-color: var(--danger);
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#logoutBtn:hover {
+  background-color: #c0392b;
+}
+
+#createGatepassBtn {
+  background-color: var(--primary-light);
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+#createGatepassBtn:hover {
+  background-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  background-color: var(--primary);
+  color: var(--white);
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(52, 152, 219, 0.05);
+}
+
+tr:hover {
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-approved {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Popup Styles */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: none;
+}
+
+#createGatepassPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 101;
+  width: 90%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: none;
+}
+
+#createGatepassPopup h3 {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+/* Form Styles */
+#gatepassForm label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+#gatepassForm input,
+#gatepassForm textarea,
+#gatepassForm select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+#gatepassForm textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+#gatepassForm fieldset {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+#gatepassForm legend {
+  padding: 0 0.5rem;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.itemRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 3fr auto;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.removeItemBtn {
+  background-color: var(--danger);
+  color: white;
+  padding: 0.5rem;
+  min-width: 30px;
+}
+
+.removeItemBtn:hover {
+  background-color: #c0392b;
+}
+
+#addItemBtn {
+  background-color: var(--success);
+  color: white;
+  margin-bottom: 1rem;
+}
+
+#addItemBtn:hover {
+  background-color: #219653;
+}
+
+#gatepassForm button[type="submit"] {
+  background-color: var(--primary-light);
+  color: white;
+  margin-right: 1rem;
+}
+
+#gatepassForm button[type="submit"]:hover {
+  background-color: var(--accent);
+}
+
+#cancelCreate {
+  background-color: var(--light);
+  color: var(--text);
+}
+
+#cancelCreate:hover {
+  background-color: #d5dbdb;
+}
+
+/* Action Buttons */
+.action-btn {
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  font-size: 0.9rem;
+}
+
+.view-btn {
+  background-color: var(--primary-light);
+  color: white;
+}
+
+.download-btn {
+  background-color: var(--success);
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  #logoutBtn {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-bottom: 1rem;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .itemRow {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .itemRow input {
+    width: 100%;
+  }
+
+  #createGatepassPopup {
+    width: 95%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  th, td {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+
+  button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+.pagination-controls {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.pagination-controls button {
+  margin: 0 5px;
+  padding: 5px 12px;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination-controls button:hover {
+  background-color: #2980b9;
+}
+

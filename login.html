@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GATEPASS SYSTEM - Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-header" style="margin-top: 50px;">
+            <img src="image.png" alt="Ecosmart Logo" class="logo">
+            <h1>GATEPASS SYSTEM 🛡️</h1>
+            <h2>Sign in to continue</h2>
+        </div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="name">Username</label>
+                <input type="text" id="name" placeholder="Enter your username" required>
+                <div class="error-message" id="name-error">Please enter a valid username</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <div class="error-message" id="email-error">Please enter a valid email</div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+                <div class="error-message" id="password-error">Please enter your password</div>
+            </div>
+
+
+            <button type="submit" class="login-btn">
+                LOGIN
+                <div id="loadingSpinner" class="spinner" style="display:none;"></div>
+            </button>
+
+          
+
+        </form>
+
+        <div class="login-footer">
+            &copy; a product of Ecosmart Industries
+        </div>
+    </div>
+    <script src="login.js"></script>
+    <script src="admin.js"></script>
+
+
+</body>
+
+</html>
