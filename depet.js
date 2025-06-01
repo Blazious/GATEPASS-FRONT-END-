@@ -252,11 +252,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
       localStorage.clear();
-      window.location.href = 'login.html';
+      window.location.href = 'index.html';
     } catch (error) {
       console.error('Logout error:', error);
       localStorage.clear();
-      window.location.href = 'login.html';
+      window.location.href = 'index.html';
     }
   };
 
